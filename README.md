@@ -7,7 +7,8 @@ VitaMind leverages advanced AI technology, including Whisper and GPT models, to 
 
 ### Deciphering Complex Dialogues 🗣️: 
 Converts intricate medical discussions into clear, actionable instructions for patients.
-Summarization 📋: Provides concise summaries of medical dialogues, making them easier to understand and act upon.
+### Summarization 📋: 
+Provides concise summaries of medical dialogues, making them easier to understand and act upon.
 ### Cultural and Linguistic Accuracy 🌍: 
 Ensures translations respect cultural nuances and maintain high linguistic fidelity.
 
