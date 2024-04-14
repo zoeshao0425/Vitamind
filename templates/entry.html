@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- Primary Meta Tags -->
+    <title>Vitamind</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="title" content="Vitamind">
+    <meta name="author" content="Themesberg">
+    <!-- <meta name="description" content="Vitamind is ... placeholder"> -->
+    <!-- <meta name="keywords" content="bootstrap, bootstrap 5, bootstrap 5 one page, bootstrap 5 mobile application, one page template, bootstrap 5 one page template, themesberg, themesberg one page, one page template bootstrap 5" /> -->
+    <link rel="canonical" href="{{ url_for('index') }}">
+    
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ url_for('static', filename='assets/img/logo2.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='assets/img/logo2.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='assets/img/logo2.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='assets/img/logo2.png') }}">
+    <link rel="mask-icon" href="{{ url_for('static', filename='assets/img/logo2.png') }}" color="#ffffff">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        .display-4 {
+            color: #5a5a5a;
+        }
+    
+        .lead {
+            color: #7a7a7a;
+        }
+    
+        .section {
+            padding: 60px 0;
+        }
+    
+        .icon {
+            font-size: 48px;
+            color: #3498db;
+            width: 30px; /* Adjust the width */
+            height: 30px; /* Adjust the height */
+        }
+    
+        .form-group label {
+            color: #5a5a5a;
+            font-weight: bold;
+        }
+    
+        .btn-primary {
+            background-color: #3498db;
+            border-color: #3498db;
+        }
+    
+        .btn-primary:hover,
+        .btn-primary:focus {
+            background-color: #1c6ba8;
+            border-color: #1c6ba8;
+        }
+
+        .form-center {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .button-with-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .button-with-icon img {
+            margin-left: 10px;
+            width: 30px; /* Adjust the width */
+            height: 30px; /* Adjust the height */
+        }
+
+        .spacer {
+            height: 100px; /* Adjust the height to control the amount of space */
+        }        
+
+        .custom-image-size {
+            width: 600px; /* Adjust the width */
+            height: 400px; /* Adjust the height */
+        }
+        
+        .title-container {
+            padding-top: 160px; /* Adjust the value to control the space above the title */
+        }    
+
+        .message {
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 10px;
+            color: white;
+            max-width: 80%;
+        }
+        
+        .patient {
+            background-color: #3498db;
+            margin-left: auto;
+        }
+        
+        .doctor {
+            background-color: #2ecc71;
+        }
+        
+        .chat-container {
+            width: 100%; /* Adjust the width as needed */
+            max-width: 1000px; /* Maximum width of the chat container */
+            height: 800px; /* New height */
+            margin: 0 auto; /* Centers the container horizontally */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Distribute space between messages and input */
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #f9f9f9; 
+        }
+        
+        .messages-container {
+            overflow-y: auto; /* Ensure scrollbar for overflow */
+            flex-grow: 1; /* Allow messages container to grow and fill space */
+            margin-bottom: 20px; /* Space between messages and input box */
+            padding-right: 10px; /* Prevents text from touching the scrollbar */
+        }
+        
+        /* Style adjustments for input and button */
+        .input-group {
+            width: 100%; /* Full width of the container */
+        }
+        
+        .input-group input, .input-group button {
+            height: 40px; /* Taller input and buttons for better interaction */
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .chat-container {
+                width: 95%; /* Smaller width on smaller screens */
+            }
+        }        
+        
+        
+    </style>
+
+    <!-- Fontawesome -->
+    <link type="text/css" href="{{ url_for('static', filename='vendor/@fortawesome/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
+
+    <!-- Swipe CSS -->
+    <link type="text/css" href="{{ url_for('static', filename='css/swipe.css') }}" rel="stylesheet">
+
+</head>
+
+
+
+<body>
+    <header class="header-global" id="home">
+        <nav id="navbar-main" aria-label="Primary navigation" class="navbar navbar-main navbar-expand-lg navbar-theme-primary headroom navbar-light navbar-theme-secondary">
+            <div class="container position-relative">
+                <a class="navbar-brand mr-lg-4" href="{{ url_for('index') }}">
+                    <!-- <img class="navbar-brand-dark" src="{{ url_for('static', filename='assets/img/dark.svg') }}" alt="Logo dark">
+                    <img class="navbar-brand-dark" src="{{ url_for('static', filename='assets/img/light.svg') }}" alt="Logo light"> -->
+                </a>
+                <div class="navbar-collapse collapse mr-auto" id="navbar_global">
+                    <div class="navbar-collapse-header"></div>
+                        <div class="row">
+                            <div class="col-6 collapse-brand">
+                                <a href="{{ url_for('index') }}">
+                                    <img src="{{ url_for('static', filename='assets/img/logo.svg') }}" alt="Logo" style="width: 80%; margin-left: 5px;">
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+                        <li class="nav-item">
+                            {% if not current_user.is_authenticated %}
+                                <a href="{{ url_for('login') }}" class="nav-link">
+                                    Log In
+                                </a>
+                            {% endif %}
+                        </li>
+                        <li class="nav-item">
+                            {% if not current_user.is_authenticated %}
+                                <a href="{{ url_for('register') }}" class="nav-link">
+                                    Register
+                                </a>
+                            {% endif %}
+                        </li>
+                            <!-- <li class="nav-item">
+                                <a href="{{ url_for('entry') }}" class="nav-link">Generate Article</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url_for('paraphrase') }}" class="nav-link">Paraphrase Article</a>
+                            </li> -->
+                        </ul>
+                    </ul>
+                </div>
+                <div class="d-flex align-items-center">
+                    <a href="{{ url_for('index') }}" target="_self" class="btn btn-outline-soft d-none d-md-inline mr-md-3 animate-up-2">Back to Landing Page</a>
+                    <button class="navbar-toggler ml-2" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>    
+    
+    <main>
+        
+        <section class="section section-lg py-0">
+            <section class="section section-header text-dark">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-10 text-center mb-5 mb-md-7">
+                            <h1 class="display-2 font-weight-bolder mb-4">
+                                Vitamind
+                            </h1>
+                            <p class="lead mb-4 mb-lg-5">Vitamind stands at the forefront of digital health innovation, exemplifying a paradigmatic shift in healthcare communication by harnessing the transformative power of artificial intelligence. As a pinnacle of linguistic engineering, VitaMind delivers real-time, AI-enhanced translation services that integrate flawlessly into clinical workflows, ensuring both linguistic fidelity and the preservation of cultural nuances.</p>
+                            <img class="d-none d-md-inline-block" src="{{ url_for('static', filename='assets/img/illustrations/scene-2.svg') }}" alt="Mobile App Mockup">
+                        </div>
+                    </div>
+                </div>
+            </section>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8">
+                        <!-- Chat Interface -->
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="chat-container border rounded p-3">
+                <div class="messages-container" style="height: 500px; overflow-y: auto;"></div>
+                <div class="input-group mt-3">
+                    <div class="row mb-3">
+                        <div class="col">
+                            <input type="text" id="message-input" class="form-control" placeholder="Type your message here or symptom description...">
+                        </div>
+                    </div>
+                    <!-- Buttons in their own row -->
+                    <div class="row">
+                        <div class="col-auto">
+                            <button id="send-text" class="btn btn-primary">Send Text</button>
+                            <button id="start-recording" class="btn btn-secondary">Start Recording</button>
+                            <button id="stop-recording" class="btn btn-danger" disabled>Stop Recording</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="role-switch mt-2">
+                    <label>Role: </label>
+                    <select class="custom-select" id="user-role">
+                        <option value="patient">Patient</option>
+                        <option value="doctor">Doctor</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<!-- Spacer -->
+<div class="spacer"></div>
+
+<!-- Footer -->
+<footer class="footer bg-light py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+                <p class="text-muted small mb-4 mb-lg-0">&copy; VitaMind 2023. All Rights Reserved.</p>
+            </div>
+            <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item mr-3">
+                        <a href="#" class="text-muted">
+                            <i class="fab fa-facebook fa-2x"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item mr-3">
+                        <a href="#" class="text-muted">
+                            <i class="fab fa-twitter fa-2x"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#" class="text-muted">
+                            <i class="fab fa-instagram fa-2x"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+
+    document.getElementById('send-text').addEventListener('click', async function() {  // Mark this function as async
+        const input = document.getElementById('message-input');
+        const message = input.value.trim();
+        const role = document.getElementById('user-role').value;
+        const messageNumber = parseInt(message, 10);
+    
+        if (role === 'patient' && !isNaN(messageNumber) && messageNumber >= 1 && messageNumber <= 6) {
+            console.log("Processing as a number choice");
+            console.log("Data to be passed:", alternativesCache);
+            processSelection(message, alternativesCache);
+            input.value = '';
+        } else if (message) {
+            displayMessage(message, role);
+            
+            if (role === 'doctor') {
+                const userLanguage = await getUserLanguage();  // Ensure this function is defined and fetches language
+                console.log('User Language:', userLanguage);
+    
+                const message_org = await translateText(message, userLanguage);  // Ensure translateText is an async function
+                displayMessage(message_org, role);
+            }
+            input.value = '';
+    
+            if (role === 'patient') {
+                fetch('/refine-symptom-description', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({initial_description: message})
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.formatted_alternatives) {
+                        displayAlternatives(data.formatted_alternatives, message);
+                        displayAlternatives(data.formatted_org_alternatives, message);
+                        console.log("org", data.formatted_org_alternatives);
+                        alternativesCache = {...data, initial_description: message};
+                        console.log("Alternatives cached", alternativesCache);
+                        console.log("Alternatives cached initial description", alternativesCache.initial_description);
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+            }
+        }
+    });
+    
+    let alternativesCache = null;
+
+    async function getUserLanguage() {
+        const response = await fetch('/api/user-language');
+        const data = await response.json();
+        return data.user_language;
+    }    
+    
+    function displayAlternatives(formattedAlternatives, originalMessage) {
+        const messageContainer = document.createElement('div');
+        messageContainer.classList.add('message', 'patient');
+        messageContainer.innerHTML = formattedAlternatives.replace(/\n/g, '<br>'); // Replace new lines with breaks for HTML
+        document.querySelector('.messages-container').appendChild(messageContainer);
+    }
+
+    async function processSelection(choice, data) {
+        console.log("Choice received in processSelection:", choice);
+        const index = parseInt(choice, 10) - 1;
+        console.log("initial description:", data.initial_description);
+    
+        // Ensure data contains the necessary details
+        if (index === 5) { // Assuming index 5 is "Keep the original"
+            await displayTranslatedMessage(data.initial_description, 'patient');
+        } else if (data.vague_part && data.alternatives && index >= 0 && index < data.alternatives.length) {
+            // Attempt to replace the vague part with the chosen alternative
+            const alternative = data.alternatives[index];
+            let updatedDescription = data.initial_description.replace(new RegExp(data.vague_part, 'gi'), alternative);
+    
+            // Check if the replace operation had no effect and append the description if so
+            if (updatedDescription === data.initial_description) {
+                const updatedDescription_en = await translateText(updatedDescription, "en");
+                console.log("updatedDescription:", updatedDescription);
+                console.log("updatedDescription_en:", updatedDescription_en);
+                updatedDescription = updatedDescription_en + " " + alternative; // Append the alternative to the end if not replaced
+            }
+    
+            await displayMessage(updatedDescription, 'patient');
+        } else {
+            console.error("Invalid choice or data error");
+            displayMessage("An error occurred. Please try again.", 'system');
+        }
+    }
+    
+    async function translateText(text, targetLanguage) {
+        const response = await fetch('/translate', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ text: text, target_language: targetLanguage })
+        });
+        return response.json().then(data => data.translatedText);
+    }    
+    
+    function displayMessage(message, role) {
+        var messageContainer = document.createElement('div');
+        messageContainer.classList.add('message', role);
+        messageContainer.textContent = message;
+        document.querySelector('.messages-container').appendChild(messageContainer);
+    }    
+
+    function displayRefinedDescriptions(refinedDescriptions, vaguePart) {
+        const container = document.getElementById('refined-descriptions-container');
+        container.innerHTML = ''; // Clear previous entries
+        refinedDescriptions.forEach((description, index) => {
+            const button = document.createElement('button');
+            button.textContent = `${index + 1}. ${description}`;
+            button.onclick = () => selectDescription(description, vaguePart);
+            container.appendChild(button);
+        });
+        const noneButton = document.createElement('button');
+        noneButton.textContent = `${refinedDescriptions.length + 1}. None of the above, keep my original description`;
+        noneButton.onclick = () => selectDescription(null, vaguePart);
+        container.appendChild(noneButton);
+    }
+    
+    function selectDescription(description, vaguePart) {
+        const inputField = document.getElementById('message-input');
+        if (description) {
+            const updatedDescription = inputField.value.replace(vaguePart, description);
+            displayMessage(updatedDescription, 'patient');
+        } else {
+            displayMessage(inputField.value, 'patient'); // Keeps the original description
+        }
+    }    
+
+    let mediaRecorder;
+    let audioChunks = [];
+    
+    document.getElementById('start-recording').addEventListener('click', function() {
+        navigator.mediaDevices.getUserMedia({ audio: true })
+            .then(stream => {
+                mediaRecorder = new MediaRecorder(stream);
+                mediaRecorder.start();
+                audioChunks = [];
+    
+                mediaRecorder.addEventListener("dataavailable", event => {
+                    audioChunks.push(event.data);
+                });
+    
+                mediaRecorder.addEventListener("stop", () => {
+                    const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+                    uploadAudio(audioBlob);
+                });
+    
+                document.getElementById('stop-recording').disabled = false;
+                document.getElementById('start-recording').disabled = true;
+            })
+            .catch(e => console.error('Error capturing audio:', e));
+    });
+    
+    document.getElementById('stop-recording').addEventListener('click', function() {
+        mediaRecorder.stop();
+        document.getElementById('start-recording').disabled = false;
+        document.getElementById('stop-recording').disabled = true;
+    });
+    
+    function uploadAudio(audioBlob) {
+        const formData = new FormData();
+        formData.append("audio", audioBlob);
+    
+        fetch('/upload-audio', {
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error('Network response was not ok.');
+        })
+        .then(data => {
+            document.getElementById('message-input').value = data.transcript || 'Error transcribing audio.';
+        })
+        .catch(error => console.error('Error uploading audio:', error));
+    }
+    
+    </script>
+        
+</body>
+</html>

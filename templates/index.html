@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- Primary Meta Tags -->
+<title>Vitamind</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="title" content="Vitamind">
+<meta name="author" content="Patrick, Ian, Zoe">
+<!-- <meta name="description" content="VitaMind stands at the forefront of digital health innovation, exemplifying a paradigmatic shift in healthcare communication by harnessing the transformative power of artificial intelligence. As a pinnacle of linguistic engineering, VitaMind delivers real-time, AI-enhanced translation services that integrate flawlessly into clinical workflows, ensuring both linguistic fidelity and the preservation of cultural nuances."> -->
+<!-- <meta name="keywords" content="placeholder" /> -->
+<link rel="canonical" href="{{ url_for('index') }}">
+
+<!-- Favicon -->
+<link rel="apple-touch-icon" sizes="120x120" href="{{ url_for('static', filename='assets/img/logo2.png') }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='assets/img/logo2.png') }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='assets/img/logo2.png') }}">
+<link rel="manifest" href="{{ url_for('static', filename='assets/img/logo2.png') }}">
+<link rel="mask-icon" href="{{ url_for('static', filename='assets/img/logo2.png') }}" color="#ffffff">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Fontawesome -->
+<link type="text/css" href="{{ url_for('static', filename='vendor/@fortawesome/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
+
+<!-- Swipe CSS -->
+<link type="text/css" href="{{ url_for('static', filename='css/swipe.css') }}" rel="stylesheet">
+
+</head>
+
+<body>
+    <header class="header-global" id="home">
+    <nav id="navbar-main" aria-label="Primary navigation" class="navbar navbar-main navbar-expand-lg navbar-theme-primary headroom navbar-light navbar-theme-secondary">
+        <div class="container position-relative">
+            <a class="navbar-brand mr-lg-4" href="{{ url_for('index') }}">
+                
+            </a>
+            <div class="navbar-collapse collapse mr-auto" id="navbar_global">
+                <div class="navbar-collapse-header"></div>
+                    <div class="row">
+                        <div class="col-6 collapse-brand">
+                            <a href="{{ url_for('index') }}">
+                                <img src="{{ url_for('static', filename='assets/img/logo.svg') }}" alt="Logo" style="width: 80%; margin-left: 5px;">
+                        </div>
+                        <div class="col-6 collapse-close">
+                            <a href="#navbar_global" class="fas fa-times" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" title="close" aria-label="Toggle navigation"></a>
+                        </div>
+                    </div>
+                </div>
+                <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+                    <li class="nav-item">
+                        <a href="{{ url_for('index') }}#how" class="nav-link">
+                            How it works?
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('index') }}#why" class="nav-link">
+                            Why it matters?
+                        </a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a href="{{ url_for('about') }}" class="nav-link">
+                            About
+                        </a>
+                    </li> -->
+                </ul>
+            </div>
+            <div class="d-flex align-items-center">
+                <a href="{{ url_for('entry') }}" target="_self" class="btn btn-primary btn-lg animate-up-2 mr-md-3 px-4 py-3" style="font-size: 20px;">Try It Out</a>
+                <button class="navbar-toggler ml-2" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            
+        </div>
+    </nav>
+</header>
+    
+    <main>
+        <!-- Hero -->
+        <section class="section section-header text-dark">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 text-center mb-5 mb-md-7">
+                        <h1 class="display-2 font-weight-bolder mb-4">
+                            Vitamind
+                        </h1>
+                        <p class="lead mb-4 mb-lg-5">VitaMind stands at the forefront of digital health innovation, exemplifying a paradigmatic shift in healthcare communication by harnessing the transformative power of artificial intelligence. As a pinnacle of linguistic engineering, VitaMind delivers real-time, AI-enhanced translation services that integrate flawlessly into clinical workflows, ensuring both linguistic fidelity and the preservation of cultural nuances.</p>
+                        <img class="d-none d-md-inline-block" src="{{ url_for('static', filename='assets/img/illustrations/scene.png') }}" alt="Mobile App Mockup">
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </section>
+        <!-- <section class="section section-lg py-0 mt-n5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
+                        <div class="card border-0 bg-white text-center p-1">
+                            <div class="card-header bg-white border-0 pb-0">
+                                <div class="icon icon-lg icon-primary mb-4">
+                                    <span class="fas fa-money-bill-wave"></span>
+                                </div>
+                                <h2 class="h3 text-dark m-0">Jargon placeholder</h2>
+                            </div>
+                            <div class="card-body">
+                                <p>
+                                    placeholder                                
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
+                        <div class="card border-0 bg-white text-center p-1">
+                            <div class="card-header bg-white border-0 pb-0">
+                                <div class="icon icon-lg icon-primary mb-4">
+                                    <span class="fas fa-map-marked-alt"></span>
+                                </div>
+                                <h2 class="h3 text-dark m-0">placeholder</h2>
+                            </div>
+                            <div class="card-body">
+                                <p>
+                                    placeholder
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card border-0 bg-white text-center p-1">
+                            <div class="card-header bg-white border-0 pb-0">
+                                <div class="icon icon-lg icon-primary mb-4">
+                                    <span class="fas fa-shopping-basket"></span>
+                                </div>
+                                <h2 class="h3 text-dark m-0">placeholder</h2>
+                            </div>
+                            <div class="card-body">
+                                <p>
+                                    placeholder                          
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <section class="section section-lg" id="how">
+            <div class="container">
+                <div class="row justify-content-center mb-5 mb-lg-7">
+                    <div class="col-12 col-lg-8 text-center">
+                        <h2 class="h1 mb-4">How It Works</h2>
+                        <p class="lead">Equipped with Whisper and GPT models, VitaMind adeptly deciphers, summarizes, and converts intricate medical dialogues into comprehensible, action-oriented directives for patients. This fusion of AI-driven transliteration and summarization, powered by state-of-the-art technology, not only guarantees impeccable understanding but also advances a proactive approach to enhancing patient engagement and adherence. VitaMind's deployment of these cutting-edge models exemplifies its commitment to leading the forefront of technological innovation in healthcare communication.</p>
+                    </div>
+                </div>
+                
+                    
+                </div>
+                <br>
+                <div class="video" id="video">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                          <div class="col-lg-8">
+                            <div class="embed-responsive embed-responsive-16by9">
+                              <iframe class="embed-responsive-item" src="https://www.youtube.com" allowfullscreen></iframe>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+        </section>
+
+        <section class="section section-lg" id="why">
+            <div class="container">
+                <div class="row justify-content-center mb-5 mb-lg-7">
+                    <div class="col-12 col-lg-8 text-center">
+                        <h2 class="h1 mb-4">Why it matters</h2>
+                        <p class="lead">VitaMind is more than a technological advance in medical translation and patient communication; it is a beacon of inclusivity, bridging language barriers and democratizing access to healthcare information for non-native English speakers. By elevating standards of care through precision, personalization, and preemptive strategies, VitaMind propels healthcare providers and recipients towards a unified goal of clarity, comprehension, and compliance.</p>
+                    </div>
+                </div>    
+            </div>
+
+        </section>
+        
+    </main>
+
+    <footer class="footer py-5 pt-lg-6">
+    <div class="sticky-left d-flex align-items-center bg-white p-3 pt-4 px-4 border border-soft shadow-sm rounded">
+        <span class="mr-3 d-block font-small mb-1">Open source ❤️</span>
+        <!-- Place this tag where you want the button to render. -->
+        <a class="github-button" href="https://github.com" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star themesberg/swipe-one-page-bootstrap-5-template on GitHub">Star</a>
+    </div>
+    <div class="sticky-right">
+        <a href="#home" class="icon icon-primary icon-md btn btn-icon-only btn-white border border-soft shadow-soft animate-up-3">
+            <span class="fas fa-chevron-up"></span>
+        </a>
+    </div>
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-md-4">
+                <p>Embrace VitaMind and redefine the essence of healthcare communication, where every word is understood, every directive is crystal clear, and every patient is thoroughly empowered.</p>
+            </div>
+            <div class="col-6 col-md-2 mb-5 mb-lg-0">
+                <span class="h5">VitaMind</span>
+                <ul class="footer-links mt-2">
+                    <li><a target="_blank" href="https://github.com">GitHub</a></li>
+                    <!-- <li><a target="_blank" href="https://5chackathon-sp23.devpost.com/">DevPost</a></li> -->
+                    
+                </ul>
+            </div>
+        </div>
+        <hr class="bg-light my-2">
+        <div class="row pt-2 pt-lg-5">
+            
+           
+        </div>
+    </div>
+</footer>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+</body>
+
+</html>

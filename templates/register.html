@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- Primary Meta Tags -->
+    <title>TailoredTales</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="title" content="TailoredTales">
+    <meta name="author" content="Themesberg">
+    <meta name="description" content="Tailored Tales">
+    <meta name="keywords" content="bootstrap, bootstrap 5, bootstrap 5 one page, bootstrap 5 mobile application, one page template, bootstrap 5 one page template, themesberg, themesberg one page, one page template bootstrap 5" />
+    <link rel="canonical" href="{{ url_for('index') }}">
+    
+    
+<!-- Favicon -->
+<link rel="apple-touch-icon" sizes="120x120" href="{{ url_for('static', filename='assets/img/logo2.png') }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='assets/img/logo2.png') }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='assets/img/logo2.png') }}">
+<link rel="manifest" href="{{ url_for('static', filename='assets/img/logo2.png') }}">
+<link rel="mask-icon" href="{{ url_for('static', filename='assets/img/logo2.png') }}" color="#ffffff">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        .display-4 {
+            color: #5a5a5a;
+        }
+    
+        .lead {
+            color: #7a7a7a;
+        }
+    
+        .section {
+            padding: 60px 0;
+        }
+    
+        .icon {
+            font-size: 48px;
+            color: #3498db;
+            width: 30px; /* Adjust the width */
+            height: 30px; /* Adjust the height */
+        }
+    
+        .form-group label {
+            color: #5a5a5a;
+            font-weight: bold;
+        }
+    
+        .btn-primary {
+            background-color: #3498db;
+            border-color: #3498db;
+        }
+    
+        .btn-primary:hover,
+        .btn-primary:focus {
+            background-color: #1c6ba8;
+            border-color: #1c6ba8;
+        }
+
+        .form-center {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .button-with-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .button-with-icon img {
+            margin-left: 10px;
+            width: 30px; /* Adjust the width */
+            height: 30px; /* Adjust the height */
+        }
+
+        .spacer {
+            height: 100px; /* Adjust the height to control the amount of space */
+        }        
+
+        .custom-image-size {
+            width: 600px; /* Adjust the width */
+            height: 400px; /* Adjust the height */
+        }
+        
+        .title-container {
+            padding-top: 160px; /* Adjust the value to control the space above the title */
+        }    
+        
+        .button-space {
+            margin-bottom: 40px;
+        }  
+        
+    </style>
+
+    <!-- Fontawesome -->
+    <link type="text/css" href="{{ url_for('static', filename='vendor/@fortawesome/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
+
+    <!-- Swipe CSS -->
+    <link type="text/css" href="{{ url_for('static', filename='css/swipe.css') }}" rel="stylesheet">
+
+</head>
+<body>
+    <header class="header-global" id="home">
+        <nav id="navbar-main" aria-label="Primary navigation" class="navbar navbar-main navbar-expand-lg navbar-theme-primary headroom navbar-light navbar-theme-secondary">
+            <div class="container position-relative">
+                <a class="navbar-brand mr-lg-4" href="{{ url_for('index') }}">
+                    <!-- <img class="navbar-brand-dark" src="{{ url_for('static', filename='assets/img/dark.svg') }}" alt="Logo dark">
+                    <img class="navbar-brand-dark" src="{{ url_for('static', filename='assets/img/light.svg') }}" alt="Logo light"> -->
+                </a>
+                <div class="navbar-collapse collapse mr-auto" id="navbar_global">
+                    <div class="navbar-collapse-header"></div>
+                        <div class="row">
+                            <div class="col-6 collapse-brand">
+                                <a href="{{ url_for('index') }}">
+                                    <img src="{{ url_for('static', filename='assets/img/logo.png') }}" alt="Logo" style="width: 30%; margin-left: 5px;">
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+                        <li class="nav-item">
+                            {% if not current_user.is_authenticated %}
+                                <a href="{{ url_for('login') }}" class="nav-link">
+                                    Log In
+                                </a>
+                            {% else %}
+                                <a href="{{ url_for('profile') }}" class="nav-link">
+                                    Profile
+                                </a>
+                            {% endif %}
+                        </li>
+                        <li class="nav-item">
+                            {% if not current_user.is_authenticated %}
+                                <a href="{{ url_for('register') }}" class="nav-link">
+                                    Register
+                                </a>
+                            {% endif %}
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{{ url_for('entry') }}" class="nav-link">Generate Article</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url_for('paraphrase') }}" class="nav-link">Paraphrase Article</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="d-flex align-items-center">
+                    <a href="{{ url_for('index') }}" target="_self" class="btn btn-outline-soft d-none d-md-inline mr-md-3 animate-up-2">Back to Landing Page</a>
+                    <button class="navbar-toggler ml-2" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>       
+    
+    <main>
+        <section class="section section-lg py-0">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 text-center mb-5 mb-md-7">
+                        <h1 class="display-2 font-weight-bolder mb-4" style="padding-top: 150px;">Register</h1>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8">
+                        <form action="{{ url_for('register') }}" method="POST">
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" id="username" name="username" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                            </div>
+                            <div class="form-center">
+                                <button type="submit" class="btn btn-primary" class="button-space">Register</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<!-- Spacer -->
+<div class="spacer"></div>
+    <footer class="footer bg-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+                    <p class="text-muted small mb-4 mb-lg-0">&copy; TailoredTales 2023. All Rights Reserved.</p>
+                </div>
+                <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item mr-3">
+                            <a href="#" class="text-muted">
+                                <i class="fab fa-facebook fa-2x"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item mr-3">
+                            <a href="#" class="text-muted">
+                                <i class="fab fa-twitter fa-2x"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="text-muted">
+                                <i class="fab fa-instagram fa-2x"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
